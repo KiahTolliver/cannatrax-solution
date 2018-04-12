@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.75, 27.5" name="AdvancePOS">
+  <DataContextMoniker Name="/AdvancePOSDataContext" />
+  <nestedChildShapes>
+    <classShape Id="16fefe81-d860-4f85-970e-3273c4dae6e1" absoluteBounds="9.5, 5.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblUserPermission" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4798843d-c874-4d7b-968e-6a0e6b69f919" absoluteBounds="9.515, 6.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8e9206b2-95b8-45a2-be23-03fdb844850f" absoluteBounds="9.75, 10.375, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblCategory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ba6ba03f-ed22-4771-832f-433e47901ae3" absoluteBounds="9.765, 10.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8c0950f-332f-4a75-b28a-f4692f78ee0b" absoluteBounds="6.75, 13.375, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblCustomer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b290f767-fd7a-4e2d-bad7-8cd6607d933a" absoluteBounds="6.765, 13.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2d674af5-b7aa-4bc4-adff-b50f6fd622a4" absoluteBounds="0.75, 13.875, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7c8ddde-fb4d-4eba-af26-31c3453b796e" absoluteBounds="0.765, 14.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="de510137-abfa-4709-bdb5-7766ac54b38b" absoluteBounds="0.75, 19, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblPurchase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be212885-a669-401b-bd0b-7382337bed70" absoluteBounds="0.765, 19.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c48e320e-8863-4fa6-ad38-f47d803be508" absoluteBounds="3.5, 14.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblPurchaseDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed32791d-0b28-42df-af69-c0a113ab1636" absoluteBounds="3.515, 14.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1ae12f2e-4671-4d5e-9e94-5aa2f94b4b09" absoluteBounds="6.75, 5.125, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblRole" />
+      <nestedChildShapes>
+        <elementListCompartment Id="883b4de8-967b-4ec3-9d31-56971ab21816" absoluteBounds="6.765, 5.585, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00e89722-45f6-405f-9b85-7c506ce31c4a" absoluteBounds="3.5, 8.375, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblSaleDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71fef073-acff-4e67-9255-d5fd58adb1f5" absoluteBounds="3.515, 8.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c906800f-3755-4c06-81f3-c04da7cfaeea" absoluteBounds="3.5, 5.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblSalePayment" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2800716e-a3a7-4a96-a0d7-56a61290641c" absoluteBounds="3.515, 6.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e19cac90-a238-4f0b-9b42-5d94f5a424f5" absoluteBounds="3.5, 2.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblSaleTax" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a4dac61-1788-4445-b6a1-be63836585d4" absoluteBounds="3.515, 3.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bf8e9f69-5a56-4fd9-b1ac-f05bf0aaadd9" absoluteBounds="9.75, 0.75, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblShop" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07f8c809-c06f-44f2-a51b-dbea130dc9c4" absoluteBounds="9.765, 1.21, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7a93b313-b188-4d22-9515-658e7622c8b9" absoluteBounds="1.5, 24, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblSupplier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="435cdf35-de85-49ba-a94b-f3680e63606f" absoluteBounds="1.5150000000000001, 24.46, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5dc54c15-4ac7-4304-b5f5-fa0a6437146f" absoluteBounds="0.75, 9.875, 2, 2.5401025390624987">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblTax" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f7c826c7-6521-44bc-ad31-9fd788d49fd0" absoluteBounds="0.765, 10.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8543bb9-6320-4168-8b93-851932e53b1b" absoluteBounds="12.5, 3.875, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e88e936-6a0c-4c49-baf4-6d8c6117b458" absoluteBounds="12.515, 4.335, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f7a0d0b-b74d-4df1-8e68-aa5127505992" absoluteBounds="9.75, 13.375, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblUserLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6669b759-5477-48d4-803e-5cc698aaf04b" absoluteBounds="9.765, 13.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 15.5777498372396); (3.5 : 15.5777498372396)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblItem/tblItem_tblPurchaseDetail" />
+      <nodes>
+        <classShapeMoniker Id="2d674af5-b7aa-4bc4-adff-b50f6fd622a4" />
+        <classShapeMoniker Id="c48e320e-8863-4fa6-ad38-f47d803be508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 20.6546541341146); (4.5 : 20.6546541341146); (4.5 : 16.6554996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblPurchase/tblPurchase_tblPurchaseDetail" />
+      <nodes>
+        <classShapeMoniker Id="de510137-abfa-4709-bdb5-7766ac54b38b" />
+        <classShapeMoniker Id="c48e320e-8863-4fa6-ad38-f47d803be508" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 6.03407348632813); (9.04166666666667 : 6.03407348632813 : JumpStart); (9.20833333333333 : 6.03407348632813 : JumpEnd); (9.5 : 6.03407348632813)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblRole/tblRole_tblUserPermission" />
+      <nodes>
+        <classShapeMoniker Id="1ae12f2e-4671-4d5e-9e94-5aa2f94b4b09" />
+        <classShapeMoniker Id="16fefe81-d860-4f85-970e-3273c4dae6e1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 13.8765374615385); (3.12653746153846 : 13.5); (4.5 : 13.5); (4.5 : 10.9151025390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblItem/tblItem_tblSaleDetail" />
+      <nodes>
+        <classShapeMoniker Id="2d674af5-b7aa-4bc4-adff-b50f6fd622a4" />
+        <classShapeMoniker Id="00e89722-45f6-405f-9b85-7c506ce31c4a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 24); (2.125 : 22.3093082682292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblSupplier/tblSupplier_tblPurchase" />
+      <nodes>
+        <classShapeMoniker Id="7a93b313-b188-4d22-9515-658e7622c8b9" />
+        <classShapeMoniker Id="de510137-abfa-4709-bdb5-7766ac54b38b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.84375 : 9.875); (0.84375 : 3.28125); (3.5 : 3.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblTax/tblTax_tblSaleTax" />
+      <nodes>
+        <classShapeMoniker Id="5dc54c15-4ac7-4304-b5f5-fa0a6437146f" />
+        <classShapeMoniker Id="e19cac90-a238-4f0b-9b42-5d94f5a424f5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.75 : 5.40625); (9.04166666666667 : 5.40625 : JumpStart); (9.20833333333333 : 5.40625 : JumpEnd); (12.5 : 5.40625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblRole/tblRole_tblUser" />
+      <nodes>
+        <classShapeMoniker Id="1ae12f2e-4671-4d5e-9e94-5aa2f94b4b09" />
+        <classShapeMoniker Id="b8543bb9-6320-4168-8b93-851932e53b1b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.75 : 2.3124995); (13.5 : 2.3124995); (13.5 : 3.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblShop/tblShop_tblUser" />
+      <nodes>
+        <classShapeMoniker Id="bf8e9f69-5a56-4fd9-b1ac-f05bf0aaadd9" />
+        <classShapeMoniker Id="b8543bb9-6320-4168-8b93-851932e53b1b" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d3df102d-b6f6-4277-bc45-2220e866f7ea" absoluteBounds="6.375, 8.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblGeneralSetting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9bc3abe0-b6a5-499d-8e23-4a5ba9a2dfc5" absoluteBounds="6.39, 9.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1df0f525-c947-4712-ab94-ab8c392c81f7" absoluteBounds="6.75, 1.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblModule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0d3a5f0-6ee9-47c3-96dc-fc83edc340d4" absoluteBounds="6.765, 1.585, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.75 : 3.85586450981571); (9.125 : 4.2308645098157); (9.125 : 6.44314697265625); (9.5 : 6.44314697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblModule/tblModule_tblUserPermission" />
+      <nodes>
+        <classShapeMoniker Id="1df0f525-c947-4712-ab94-ab8c392c81f7" />
+        <classShapeMoniker Id="16fefe81-d860-4f85-970e-3273c4dae6e1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="80df61ab-7157-4020-9d4d-8d3a6d9e14ab" absoluteBounds="1, 3.875, 2, 4.8477197265625">
+      <DataClassMoniker Name="/AdvancePOSDataContext/tblSale" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f1d3b82-a7cd-4280-a542-b89d16ec4652" absoluteBounds="1.0150000000000006, 4.335, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2 : 8.7227197265625); (2 : 9.64505126953125); (3.5 : 9.64505126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblSale/tblSale_tblSaleDetail" />
+      <nodes>
+        <classShapeMoniker Id="80df61ab-7157-4020-9d4d-8d3a6d9e14ab" />
+        <classShapeMoniker Id="00e89722-45f6-405f-9b85-7c506ce31c4a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 6.63544840494792); (3.5 : 6.63544840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblSale/tblSale_tblSalePayment" />
+      <nodes>
+        <classShapeMoniker Id="80df61ab-7157-4020-9d4d-8d3a6d9e14ab" />
+        <classShapeMoniker Id="c906800f-3755-4c06-81f3-c04da7cfaeea" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 4.19794840494792); (3.5 : 4.19794840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdvancePOSDataContext/tblSale/tblSale_tblSaleTax" />
+      <nodes>
+        <classShapeMoniker Id="80df61ab-7157-4020-9d4d-8d3a6d9e14ab" />
+        <classShapeMoniker Id="e19cac90-a238-4f0b-9b42-5d94f5a424f5" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

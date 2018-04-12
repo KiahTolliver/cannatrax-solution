@@ -1,0 +1,727 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdvancePOS" Class="AdvancePOSDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=HITESH-PC\HITESHPC;Initial Catalog=AdvancePOS;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AdvancePOSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblUserPermission" Member="tblUserPermissions">
+    <Type Name="tblUserPermission">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblRole_tblUserPermission" Member="tblRole" ThisKey="RoleID" OtherKey="ID" Type="tblRole" IsForeignKey="true" />
+      <Association Name="tblModule_tblUserPermission" Member="tblModule" ThisKey="ModuleID" OtherKey="ID" Type="tblModule" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCategory" Member="tblCategories">
+    <Type Name="tblCategory">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCustomer" Member="tblCustomers">
+    <Type Name="tblCustomer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblItem" Member="tblItems">
+    <Type Name="tblItem">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="PhotoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblItem_tblPurchaseDetail" Member="tblPurchaseDetails" ThisKey="ID" OtherKey="ItemID" Type="tblPurchaseDetail" />
+      <Association Name="tblItem_tblSaleDetail" Member="tblSaleDetails" ThisKey="ID" OtherKey="ItemID" Type="tblSaleDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPurchase" Member="tblPurchases">
+    <Type Name="tblPurchase">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SupplierID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalItem" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaidBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblPurchase_tblPurchaseDetail" Member="tblPurchaseDetails" ThisKey="ID" OtherKey="PurchaseID" Type="tblPurchaseDetail" />
+      <Association Name="tblSupplier_tblPurchase" Member="tblSupplier" ThisKey="SupplierID" OtherKey="ID" Type="tblSupplier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPurchaseDetail" Member="tblPurchaseDetails">
+    <Type Name="tblPurchaseDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PurchaseID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tblItem_tblPurchaseDetail" Member="tblItem" ThisKey="ItemID" OtherKey="ID" Type="tblItem" IsForeignKey="true" />
+      <Association Name="tblPurchase_tblPurchaseDetail" Member="tblPurchase" ThisKey="PurchaseID" OtherKey="ID" Type="tblPurchase" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRole" Member="tblRoles">
+    <Type Name="tblRole">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSuperAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblRole_tblUserPermission" Member="tblUserPermissions" ThisKey="ID" OtherKey="RoleID" Type="tblUserPermission" />
+      <Association Name="tblRole_tblUser" Member="tblUsers" ThisKey="ID" OtherKey="RoleID" Type="tblUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSaleDetail" Member="tblSaleDetails">
+    <Type Name="tblSaleDetail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SaleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SellPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="DiscountRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Discount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tblItem_tblSaleDetail" Member="tblItem" ThisKey="ItemID" OtherKey="ID" Type="tblItem" IsForeignKey="true" />
+      <Association Name="tblSale_tblSaleDetail" Member="tblSale" ThisKey="SaleID" OtherKey="ID" Type="tblSale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSalePayment" Member="tblSalePayments">
+    <Type Name="tblSalePayment">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SaleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PaymentDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PaymentMode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tblSale_tblSalePayment" Member="tblSale" ThisKey="SaleID" OtherKey="ID" Type="tblSale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSaleTax" Member="tblSaleTaxes">
+    <Type Name="tblSaleTax">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SaleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaxID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TaxAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Association Name="tblTax_tblSaleTax" Member="tblTax" ThisKey="TaxID" OtherKey="ID" Type="tblTax" IsForeignKey="true" />
+      <Association Name="tblSale_tblSaleTax" Member="tblSale" ThisKey="SaleID" OtherKey="ID" Type="tblSale" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblShop" Member="tblShops">
+    <Type Name="tblShop">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="StoreCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LogoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblShop_tblUser" Member="tblUsers" ThisKey="ID" OtherKey="ShopID" Type="tblUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSupplier" Member="tblSuppliers">
+    <Type Name="tblSupplier">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="SupplierType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblSupplier_tblPurchase" Member="tblPurchases" ThisKey="ID" OtherKey="SupplierID" Type="tblPurchase" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTax" Member="tblTaxes">
+    <Type Name="tblTax">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblTax_tblSaleTax" Member="tblSaleTaxes" ThisKey="ID" OtherKey="TaxID" Type="tblSaleTax" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUser" Member="tblUsers">
+    <Type Name="tblUser">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhotoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblRole_tblUser" Member="tblRole" ThisKey="RoleID" OtherKey="ID" Type="tblRole" IsForeignKey="true" />
+      <Association Name="tblShop_tblUser" Member="tblShop" ThisKey="ShopID" OtherKey="ID" Type="tblShop" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUserLog" Member="tblUserLogs">
+    <Type Name="tblUserLog">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Message" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="MoreInfo" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LogTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblGeneralSetting" Member="tblGeneralSettings">
+    <Type Name="tblGeneralSetting">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(52)" CanBeNull="true" />
+      <Column Name="Website" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CompanyLogo" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CurrencyCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblModule" Member="tblModules">
+    <Type Name="tblModule">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ParentModuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PageIcon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PageUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PageSlug" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="tblModule_tblUserPermission" Member="tblUserPermissions" ThisKey="ID" OtherKey="ModuleID" Type="tblUserPermission" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSale" Member="tblSales">
+    <Type Name="tblSale">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalTax" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="TotalDiscount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Change" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="tblSale_tblSaleDetail" Member="tblSaleDetails" ThisKey="ID" OtherKey="SaleID" Type="tblSaleDetail" />
+      <Association Name="tblSale_tblSalePayment" Member="tblSalePayments" ThisKey="ID" OtherKey="SaleID" Type="tblSalePayment" />
+      <Association Name="tblSale_tblSaleTax" Member="tblSaleTaxes" ThisKey="ID" OtherKey="SaleID" Type="tblSaleTax" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_CategoryAdd" Method="sp_CategoryAdd">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_TaxUpdate" Method="sp_TaxUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="TaxRate" Parameter="taxRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CategoryUpdate" Method="sp_CategoryUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CustomerAdd" Method="sp_CustomerAdd">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_CustomerUpdate" Method="sp_CustomerUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EmployeeAdd" Method="sp_EmployeeAdd">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ShopID" Parameter="shopID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Department" Parameter="department" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Designation" Parameter="designation" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Supervisor" Parameter="supervisor" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhotoPath" Parameter="photoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_EmployeeUpdate" Method="sp_EmployeeUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ShopID" Parameter="shopID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FirstName" Parameter="firstName" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="LastName" Parameter="lastName" Type="System.String" DbType="NVarChar(200)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Department" Parameter="department" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Designation" Parameter="designation" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Supervisor" Parameter="supervisor" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="DateOfBirth" Parameter="dateOfBirth" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhotoPath" Parameter="photoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetCategory" Method="sp_GetCategory">
+    <ElementType Name="sp_GetCategoryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetCustomer" Method="sp_GetCustomer">
+    <ElementType Name="sp_GetCustomerResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetEmployee" Method="sp_GetEmployee">
+    <ElementType Name="sp_GetEmployeeResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RoleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Supervisor" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DateOfBirth" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhotoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetItem" Method="sp_GetItem">
+    <ElementType Name="sp_GetItemResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PurchasePrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="SellingPrice" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PhotoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="DiscountRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Decimal" DbType="Decimal(18,3)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CategoryID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetItemStock" Method="sp_GetItemStock">
+    <Parameter Name="ItemID" Parameter="itemID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetItemStockResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhotoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="ItemCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CategoryName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="OpeningBalance" Type="System.Decimal" DbType="Decimal(38,3)" CanBeNull="true" />
+      <Column Name="Inwards" Type="System.Decimal" DbType="Decimal(38,0)" CanBeNull="true" />
+      <Column Name="Outwards" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetModuleByRoleID" Method="sp_GetModuleByRoleID">
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ParentModuleID" Parameter="parentModuleID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetModuleByRoleIDResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ParentModuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DisplayOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PageIcon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PageUrl" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="PageSlug" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsShow" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetPurchase" Method="sp_GetPurchase">
+    <ElementType Name="sp_GetPurchaseResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalItem" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="TotalAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="PaidBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetRole" Method="sp_GetRole">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_GetRoleResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsSuperAdmin" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetShop" Method="sp_GetShop">
+    <ElementType Name="sp_GetShopResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="StoreCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="LogoPath" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsDefault" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetSupplier" Method="sp_GetSupplier">
+    <ElementType Name="sp_GetSupplierResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="CompanyName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="PhoneNo" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="SupplierType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_GetTax" Method="sp_GetTax">
+    <ElementType Name="sp_GetTaxResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxRate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="InsertedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="InsertedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LastModifiedBy" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LastModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_ItemAdd" Method="sp_ItemAdd">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PurchasePrice" Parameter="purchasePrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="SellingPrice" Parameter="sellingPrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="DiscountRate" Parameter="discountRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(18,3)" />
+    <Parameter Name="PhotoPath" Parameter="photoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ItemUpdate" Method="sp_ItemUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="ItemCode" Parameter="itemCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CategoryID" Parameter="categoryID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PurchasePrice" Parameter="purchasePrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="SellingPrice" Parameter="sellingPrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="DiscountRate" Parameter="discountRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(18,3)" />
+    <Parameter Name="PhotoPath" Parameter="photoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_ModuleList" Method="sp_ModuleList">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_ModuleListResult">
+      <Column Name="id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuleName" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="FullName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DisPlayOrder" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PurchaseAdd" Method="sp_PurchaseAdd">
+    <Parameter Name="SupplierID" Parameter="supplierID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PurchaseDate" Parameter="purchaseDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="TotalItem" Parameter="totalItem" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="TotalAmount" Parameter="totalAmount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="PaidBy" Parameter="paidBy" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PurchaseDetailAdd" Method="sp_PurchaseDetailAdd">
+    <Parameter Name="PurchaseID" Parameter="purchaseID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ItemID" Parameter="itemID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="Price" Parameter="price" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Discount" Parameter="discount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RoleAdd" Method="sp_RoleAdd">
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleID" Parameter="roleID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_RoleUpdate" Method="sp_RoleUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RoleName" Parameter="roleName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SaleDetailAdd" Method="sp_SaleDetailAdd">
+    <Parameter Name="SaleID" Parameter="saleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ItemID" Parameter="itemID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Quantity" Parameter="quantity" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="UnitPrice" Parameter="unitPrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="SellPrice" Parameter="sellPrice" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="DiscountRate" Parameter="discountRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Discount" Parameter="discount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="NetAmount" Parameter="netAmount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SalePaymentAdd" Method="sp_SalePaymentAdd">
+    <Parameter Name="SaleID" Parameter="saleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PaymentDate" Parameter="paymentDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="PaymentMode" Parameter="paymentMode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Amount" Parameter="amount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SaleTaxAdd" Method="sp_SaleTaxAdd">
+    <Parameter Name="SaleID" Parameter="saleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TaxID" Parameter="taxID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TaxRate" Parameter="taxRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TaxAmount" Parameter="taxAmount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_StoreAdd" Method="sp_StoreAdd">
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="StoreCode" Parameter="storeCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LogoPath" Parameter="logoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_StoreUpdate" Method="sp_StoreUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StoreName" Parameter="storeName" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="StoreCode" Parameter="storeCode" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LogoPath" Parameter="logoPath" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SupplierAdd" Method="sp_SupplierAdd">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="SupplierType" Parameter="supplierType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SupplierUpdate" Method="sp_SupplierUpdate">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="CompanyName" Parameter="companyName" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(1000)" />
+    <Parameter Name="PhoneNo" Parameter="phoneNo" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="SupplierType" Parameter="supplierType" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_TaxAdd" Method="sp_TaxAdd">
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="TaxRate" Parameter="taxRate" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SaleAdd" Method="sp_SaleAdd">
+    <Parameter Name="OrderNo" Parameter="orderNo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RefNumber" Parameter="refNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="OrderDate" Parameter="orderDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ShopID" Parameter="shopID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalItem" Parameter="totalItem" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SubTotal" Parameter="subTotal" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalTax" Parameter="totalTax" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalDiscount" Parameter="totalDiscount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="NetAmount" Parameter="netAmount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Change" Parameter="change" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="OrderStatus" Parameter="orderStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="InsertBy" Parameter="insertBy" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SaleID" Parameter="saleID" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_GetSaleHistory" Method="sp_GetSaleHistory">
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="sp_GetSaleHistoryResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ShopID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RefNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OrderNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalItem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="NetAmount" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Payment" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(512)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SaleUpdate" Method="sp_SaleUpdate">
+    <Parameter Name="SaleID" Parameter="saleID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RefNumber" Parameter="refNumber" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TotalItem" Parameter="totalItem" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="SubTotal" Parameter="subTotal" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalTax" Parameter="totalTax" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="TotalDiscount" Parameter="totalDiscount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="NetAmount" Parameter="netAmount" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Payment" Parameter="payment" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Change" Parameter="change" Type="System.Decimal" DbType="Decimal(18,2)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="OrderStatus" Parameter="orderStatus" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="NVarChar(512)" />
+    <Parameter Name="LastModifiedBy" Parameter="lastModifiedBy" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
