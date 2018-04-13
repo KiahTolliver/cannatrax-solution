@@ -11,7 +11,7 @@ namespace CannaTrax.Data.EF
     public partial class UtilityContext : DbContext, IUtilityContext
     {
         public UtilityContext()
-            : base("name=AdvancePOS")
+            : base("name=CannaTraxModel")
         {
             Database.SetInitializer<UtilityContext>(null);
             Database.Log = (s) => Debug.Write(s);
