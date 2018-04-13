@@ -55,15 +55,63 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\GeneralSettingsModel.cs" />
+    <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\ModuleModel.cs" />
+    <Compile Include="Models\PurchaseDetailModel.cs" />
+    <Compile Include="Models\PurchaseModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SaleDetailModel.cs" />
+    <Compile Include="Models\SaleModel.cs" />
+    <Compile Include="Models\SalePaymentModel.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
+    <Compile Include="Models\TaxModel.cs" />
+    <Compile Include="Models\UserLogModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserPermissionModel.cs" />
+    <Compile Include="Processors\Category\CategoryProcessor.cs" />
+    <Compile Include="Processors\Category\ICategoryProcessor.cs" />
+    <Compile Include="Processors\Customer\CustomerProcessor.cs" />
+    <Compile Include="Processors\Customer\ICustomerProcessor.cs" />
+    <Compile Include="Processors\GeneralSettings\GeneralSettingsProcessor.cs" />
+    <Compile Include="Processors\GeneralSettings\IGeneralSettingsProcessor.cs" />
+    <Compile Include="Processors\UserPermission\IUserPermissionProcessor.cs" />
+    <Compile Include="Processors\UserPermission\UserPermissionProcessor.cs" />
+    <Compile Include="Processors\User\IUserProcessor.cs" />
+    <Compile Include="Processors\UserLog\IUserLogProcessor.cs" />
+    <Compile Include="Processors\TaxProcessor\ITaxProcessor.cs" />
+    <Compile Include="Processors\Supplier\ISupplierProcessor.cs" />
+    <Compile Include="Processors\Shop\IShopProcessor.cs" />
+    <Compile Include="Processors\SalePayment\ISalePaymentProcessor.cs" />
+    <Compile Include="Processors\SalePayment\SalePaymentProcessor.cs" />
+    <Compile Include="Processors\Sale\ISaleProcessor.cs" />
+    <Compile Include="Processors\SaleDetail\ISaleDetailProcessor.cs" />
+    <Compile Include="Processors\Role\IRoleProcessor.cs" />
+    <Compile Include="Processors\Purchase\IPurchaseProcessor.cs" />
+    <Compile Include="Processors\PurchaseDetail\IPurchaseDetailProcessor.cs" />
+    <Compile Include="Processors\Module\IModuleProcessor.cs" />
+    <Compile Include="Processors\Item\IItemProcessor.cs" />
+    <Compile Include="Processors\Item\ItemProcessor.cs" />
+    <Compile Include="Processors\Module\ModuleProcessor.cs" />
+    <Compile Include="Processors\PurchaseDetail\PurchaseDetailProcessor.cs" />
+    <Compile Include="Processors\Purchase\PurchaseProcessor.cs" />
+    <Compile Include="Processors\Role\RoleProcessor.cs" />
+    <Compile Include="Processors\SaleDetail\SaleDetailProcessor.cs" />
+    <Compile Include="Processors\Sale\SaleProcessor.cs" />
+    <Compile Include="Processors\Shop\ShopProcessor.cs" />
+    <Compile Include="Processors\Supplier\SupplierProcessor.cs" />
+    <Compile Include="Processors\TaxProcessor\TaxProcessor.cs" />
+    <Compile Include="Processors\UserLog\UserLogProcessor.cs" />
+    <Compile Include="Processors\User\UserProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

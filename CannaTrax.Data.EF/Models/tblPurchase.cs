@@ -5,7 +5,6 @@ namespace CannaTrax.Data.EF
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("tblPurchase")]
     public partial class tblPurchase: IQueryableEntity, IAuditableEntity
