@@ -8,5 +8,11 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public class RoleRepository:IRoleRepository
     {
+        private readonly IEntityRepository<tblRole> _repo;
+
+        public RoleRepository(IEntityRepository<tblRole> repo)
+        {
+            _repo = repo;
+        }
     }
 }

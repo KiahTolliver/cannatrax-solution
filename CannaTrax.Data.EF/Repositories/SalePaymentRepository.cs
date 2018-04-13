@@ -8,5 +8,11 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public class SalePaymentRepository:ISalePaymentRepository
     {
+        private readonly IEntityRepository<tblSalePayment> _repo;
+
+        public SalePaymentRepository(IEntityRepository<tblSalePayment> repo)
+        {
+            _repo = repo;
+        }
     }
 }

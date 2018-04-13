@@ -8,5 +8,11 @@ namespace CannaTrax.Data.EF.Repositories
 {
   public class CategoryRepository:ICategoryRepository
     {
+        private readonly IEntityRepository<tblCategory> _repo;
+
+        public CategoryRepository(IEntityRepository<tblCategory> repo)
+        {
+            _repo = repo;
+        }
     }
 }

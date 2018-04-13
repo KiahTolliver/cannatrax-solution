@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace CannaTrax.Data.EF.Repositories
 {
-    class UserRepository
+    public class UserRepository: IUserRepository
     {
+        private readonly IEntityRepository<tblUser> _repo;
+
+        public UserRepository(IEntityRepository<tblUser> repo)
+        {
+            _repo = repo;
+        }
     }
 }

@@ -8,5 +8,11 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public class UserLogRepository:IUserLogRepository
     {
+        private readonly IEntityRepository<tblUserLog> _repo;
+
+        public UserLogRepository(IEntityRepository<tblUserLog> repo)
+        {
+            _repo = repo;
+        }
     }
 }

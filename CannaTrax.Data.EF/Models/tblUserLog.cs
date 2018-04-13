@@ -1,5 +1,6 @@
 namespace CannaTrax.Data.EF
 {
+    using CannaTrax.Data.EF.Interfaces;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ namespace CannaTrax.Data.EF
     using System.Data.Entity.Spatial;
 
     [Table("tblUserLog")]
-    public partial class tblUserLog
+    public partial class tblUserLog : IQueryableEntity
     {
         public int ID { get; set; }
 

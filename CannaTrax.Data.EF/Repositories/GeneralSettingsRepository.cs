@@ -8,5 +8,10 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public class GeneralSettingsRepository:IGeneralSettingsRepository
     {
+        private readonly IEntityRepository<tblGeneralSetting> _repo;
+        public GeneralSettingsRepository(IEntityRepository<tblGeneralSetting> repo)
+        {
+            _repo = repo;
+        }
     }
 }

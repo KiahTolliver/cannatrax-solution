@@ -8,5 +8,11 @@ namespace CannaTrax.Data.EF.Repositories
 {
    public class ShopRepository:IShopRepository
     {
+        private readonly IEntityRepository<tblShop> _repo;
+
+        public ShopRepository(IEntityRepository<tblShop> repo)
+        {
+            _repo = repo;
+        }
     }
 }
