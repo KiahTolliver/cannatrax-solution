@@ -8,5 +8,10 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public interface IUserPermissionRepository
     {
+        tblUserPermission Add(tblUserPermission dbo);
+        tblUserPermission Update(tblUserPermission dbo);
+        void Delete(tblUserPermission dbo);
+        IEnumerable<tblUserPermission> GetAll();
+        tblUserPermission GetById(int id);
     }
 }

@@ -8,5 +8,10 @@ namespace CannaTrax.Data.EF.Repositories
 {
     public interface ISaleTaxRepository
     {
+        tblSaleTax Add(tblSaleTax dbo);
+        tblSaleTax Update(tblSaleTax dbo);
+        void Delete(tblSaleTax dbo);
+        List<tblSaleTax> GetAll();
+        tblSaleTax GetById(int id);
     }
 }
