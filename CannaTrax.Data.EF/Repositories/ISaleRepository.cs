@@ -11,7 +11,7 @@ namespace CannaTrax.Data.EF.Repositories
         tblSale Add(tblSale dbo);
         tblSale Update(tblSale dbo);
         void Delete(tblSale dbo);
-        List<tblSale> GetAll();
+        IEnumerable<tblSale> GetAll();
         tblSale GetById(int id);
     }
 }

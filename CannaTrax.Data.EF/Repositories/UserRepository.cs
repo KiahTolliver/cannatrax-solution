@@ -14,5 +14,30 @@ namespace CannaTrax.Data.EF.Repositories
         {
             _repo = repo;
         }
+
+        public tblUser Add(tblUser dbo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(tblUser dbo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<tblUser> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public tblUser GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public tblUser Update(tblUser dbo)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
