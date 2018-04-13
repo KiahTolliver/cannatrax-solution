@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[tblSale] (
+    [ID]               INT             IDENTITY (1, 1) NOT NULL,
+    [OrderNo]          INT             NULL,
+    [RefNumber]        NVARCHAR (50)   NULL,
+    [OrderDate]        DATETIME        NULL,
+    [CustomerID]       INT             NULL,
+    [ShopID]           INT             NULL,
+    [TotalItem]        INT             NULL,
+    [SubTotal]         DECIMAL (18, 2) NULL,
+    [TotalTax]         DECIMAL (18, 2) NULL,
+    [TotalDiscount]    DECIMAL (18, 2) NULL,
+    [NetAmount]        DECIMAL (18, 2) NULL,
+    [Payment]          DECIMAL (18, 2) NULL,
+    [Change]           DECIMAL (18, 2) NULL,
+    [Status]           NVARCHAR (50)   NULL,
+    [OrderStatus]      NVARCHAR (50)   NULL,
+    [Notes]            NVARCHAR (512)  NULL,
+    [IsDeleted]        BIT             NULL,
+    [InsertedBy]       INT             NULL,
+    [InsertedDate]     DATETIME        NULL,
+    [LastModifiedBy]   INT             NULL,
+    [LastModifiedDate] DATETIME        NULL,
+    CONSTRAINT [PK_tblSale] PRIMARY KEY CLUSTERED ([ID] ASC)
+);
+

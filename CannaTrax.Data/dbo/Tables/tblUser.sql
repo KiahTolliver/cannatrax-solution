@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[tblUser] (
+    [ID]               INT            IDENTITY (1, 1) NOT NULL,
+    [RoleID]           INT            NULL,
+    [ShopID]           INT            NULL,
+    [FirstName]        NVARCHAR (200) NULL,
+    [LastName]         NVARCHAR (200) NULL,
+    [PhoneNo]          NVARCHAR (50)  NULL,
+    [Email]            NVARCHAR (100) NULL,
+    [Department]       NVARCHAR (100) NULL,
+    [Designation]      NVARCHAR (100) NULL,
+    [Supervisor]       NVARCHAR (100) NULL,
+    [DateOfBirth]      DATE           NULL,
+    [Address]          NVARCHAR (512) NULL,
+    [PhotoPath]        NVARCHAR (512) NULL,
+    [UserName]         NVARCHAR (100) NULL,
+    [Password]         NVARCHAR (512) NULL,
+    [IsActive]         BIT            NULL,
+    [IsDeleted]        BIT            NULL,
+    [IsDefault]        BIT            NULL,
+    [InsertedBy]       INT            NULL,
+    [InsertedDate]     DATETIME       NULL,
+    [LastModifiedBy]   INT            NULL,
+    [LastModifiedDate] DATETIME       NULL,
+    CONSTRAINT [PK_tblUser] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK_tblUser_tblRole] FOREIGN KEY ([RoleID]) REFERENCES [dbo].[tblRole] ([ID]),
+    CONSTRAINT [FK_tblUser_tblShop] FOREIGN KEY ([ShopID]) REFERENCES [dbo].[tblShop] ([ID])
+);
+

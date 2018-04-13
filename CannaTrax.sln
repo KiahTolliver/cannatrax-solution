@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CannaTrax.POS", "CannaTrax.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CannaTrax.POS.Tests", "CannaTrax.POS.Tests\CannaTrax.POS.Tests.csproj", "{F2B486C8-0BDD-4CB8-8764-CF1B3A25AC5E}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CannaTrax.Data", "CannaTrax.Data\CannaTrax.Data.sqlproj", "{16C93BE8-7680-42AA-BC7C-D515AB926D76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CannaTrax.Common", "CannaTraxx.Common\CannaTrax.Common.csproj", "{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CannaTrax.Data.EF", "CannaTrax.Data.EF\CannaTrax.Data.EF.csproj", "{D2B685C3-4404-4171-BA76-EB267DEB1241}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,20 @@ Global
 		{F2B486C8-0BDD-4CB8-8764-CF1B3A25AC5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B486C8-0BDD-4CB8-8764-CF1B3A25AC5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2B486C8-0BDD-4CB8-8764-CF1B3A25AC5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16C93BE8-7680-42AA-BC7C-D515AB926D76}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2B685C3-4404-4171-BA76-EB267DEB1241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2B685C3-4404-4171-BA76-EB267DEB1241}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2B685C3-4404-4171-BA76-EB267DEB1241}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2B685C3-4404-4171-BA76-EB267DEB1241}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
