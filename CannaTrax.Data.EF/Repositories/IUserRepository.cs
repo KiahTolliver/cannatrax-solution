@@ -8,5 +8,10 @@ namespace CannaTrax.Data.EF.Repositories
 {
    public interface IUserRepository
     {
+        tblUser Add(tblUser dbo);
+        tblUser Update(tblUser dbo);
+        void Delete(tblUser dbo);
+        IEnumerable<tblUser> GetAll();
+        tblUser GetById(int id);
     }
 }

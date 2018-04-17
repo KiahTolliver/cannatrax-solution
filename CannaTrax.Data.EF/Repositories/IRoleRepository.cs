@@ -8,5 +8,10 @@ namespace CannaTrax.Data.EF.Repositories
 {
    public interface IRoleRepository
     {
+        tblRole Add(tblRole dbo);
+        tblRole Update(tblRole dbo);
+        void Delete(tblRole dbo);
+        IEnumerable<tblRole> GetAll();
+        tblRole GetById(int id);
     }
 }

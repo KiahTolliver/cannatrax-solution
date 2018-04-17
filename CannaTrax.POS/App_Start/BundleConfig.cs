@@ -21,11 +21,19 @@ namespace CannaTrax.POS
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/respond.js",                    
+                      "~/Scripts/chartist.min.js",
+                      "~/Scripts/arrive.min.js",
+                      "~/Scripts/perfect-scrollbar.jquery.min.js",
+                      "~/Scripts/bootstrap-notify.js",
+                      "~/Scripts/material-dashboard.js",
+                      "~/Scripts/demo.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/material-dashboard.css", 
+                      "~/Content/demo.css"));
         }
     }
 }

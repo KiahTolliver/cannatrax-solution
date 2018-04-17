@@ -1,13 +1,12 @@
 namespace CannaTrax.Data.EF
 {
-    using System;
+    using CannaTrax.Data.EF.Interfaces;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("tblModule")]
-    public partial class tblModule
+    public partial class tblModule: IQueryableEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tblModule()

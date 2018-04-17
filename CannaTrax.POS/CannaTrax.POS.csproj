@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.7.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.7.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -148,6 +154,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -168,24 +175,81 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\demo.css" />
+    <Content Include="Content\material-dashboard.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\apple-icon.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\cover.jpeg" />
+    <Content Include="img\faces\marc.jpg" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\mask.png" />
+    <Content Include="img\new_logo.png" />
+    <Content Include="img\sidebar-1.jpg" />
+    <Content Include="img\sidebar-2.jpg" />
+    <Content Include="img\sidebar-3.jpg" />
+    <Content Include="img\sidebar-4.jpg" />
+    <Content Include="img\tim_80x80.png" />
+    <Content Include="Scripts\arrive.min.js" />
+    <Content Include="Scripts\bootstrap-notify.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="sass\material-dashboard.scss" />
+    <Content Include="sass\md\mixins\_chartist.scss" />
+    <Content Include="sass\md\mixins\_transparency.scss" />
+    <Content Include="sass\md\mixins\_vendor-prefixes.scss" />
+    <Content Include="sass\md\plugins\_animate.scss" />
+    <Content Include="sass\md\plugins\_perfect-scrollbar.scss" />
+    <Content Include="sass\md\plugins\_plugin-nouislider.scss" />
+    <Content Include="sass\md\_alerts.scss" />
+    <Content Include="sass\md\_buttons.scss" />
+    <Content Include="sass\md\_cards.scss" />
+    <Content Include="sass\md\_chartist.scss" />
+    <Content Include="sass\md\_checkboxes.scss" />
+    <Content Include="sass\md\_colors.scss" />
+    <Content Include="sass\md\_dialogs.scss" />
+    <Content Include="sass\md\_dropdown.scss" />
+    <Content Include="sass\md\_footers.scss" />
+    <Content Include="sass\md\_forms.scss" />
+    <Content Include="sass\md\_inputs-size.scss" />
+    <Content Include="sass\md\_inputs.scss" />
+    <Content Include="sass\md\_misc.scss" />
+    <Content Include="sass\md\_mixins.scss" />
+    <Content Include="sass\md\_navbars.scss" />
+    <Content Include="sass\md\_pagination.scss" />
+    <Content Include="sass\md\_pills.scss" />
+    <Content Include="sass\md\_popups.scss" />
+    <Content Include="sass\md\_radios.scss" />
+    <Content Include="sass\md\_responsive.scss" />
+    <Content Include="sass\md\_ripples.scss" />
+    <Content Include="sass\md\_shadows.scss" />
+    <Content Include="sass\md\_sidebar-and-main-panel.scss" />
+    <Content Include="sass\md\_tables.scss" />
+    <Content Include="sass\md\_tabs.scss" />
+    <Content Include="sass\md\_togglebutton.scss" />
+    <Content Include="sass\md\_typography.scss" />
+    <Content Include="sass\md\_variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\chartist.min.js" />
+    <Content Include="Scripts\demo.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\material-dashboard.js" />
+    <Content Include="Scripts\material.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\perfect-scrollbar.jquery.min.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Web.config" />
@@ -202,6 +266,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\_Dashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

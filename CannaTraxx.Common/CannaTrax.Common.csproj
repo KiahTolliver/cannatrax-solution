@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>18ae78a9-b2b9-4fa8-99ec-f8d5fd7f3aa7</ProjectGuid>
+    <ProjectGuid>{18AE78A9-B2B9-4FA8-99EC-F8D5FD7F3AA7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>CannaTraxx.Common</RootNamespace>
@@ -30,24 +30,88 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="Autofac, Version=4.7.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.7.0\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\GeneralSettingsModel.cs" />
+    <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\ModuleModel.cs" />
+    <Compile Include="Models\PurchaseDetailModel.cs" />
+    <Compile Include="Models\PurchaseModel.cs" />
+    <Compile Include="Models\RoleModel.cs" />
+    <Compile Include="Models\SaleDetailModel.cs" />
+    <Compile Include="Models\SaleModel.cs" />
+    <Compile Include="Models\SalePaymentModel.cs" />
+    <Compile Include="Models\ShopModel.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
+    <Compile Include="Models\TaxModel.cs" />
+    <Compile Include="Models\UserLogModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="Models\UserPermissionModel.cs" />
+    <Compile Include="Processors\Category\CategoryProcessor.cs" />
+    <Compile Include="Processors\Category\ICategoryProcessor.cs" />
+    <Compile Include="Processors\Customer\CustomerProcessor.cs" />
+    <Compile Include="Processors\Customer\ICustomerProcessor.cs" />
+    <Compile Include="Processors\GeneralSettings\GeneralSettingsProcessor.cs" />
+    <Compile Include="Processors\GeneralSettings\IGeneralSettingsProcessor.cs" />
+    <Compile Include="Processors\UserPermission\IUserPermissionProcessor.cs" />
+    <Compile Include="Processors\UserPermission\UserPermissionProcessor.cs" />
+    <Compile Include="Processors\User\IUserProcessor.cs" />
+    <Compile Include="Processors\UserLog\IUserLogProcessor.cs" />
+    <Compile Include="Processors\TaxProcessor\ITaxProcessor.cs" />
+    <Compile Include="Processors\Supplier\ISupplierProcessor.cs" />
+    <Compile Include="Processors\Shop\IShopProcessor.cs" />
+    <Compile Include="Processors\SalePayment\ISalePaymentProcessor.cs" />
+    <Compile Include="Processors\SalePayment\SalePaymentProcessor.cs" />
+    <Compile Include="Processors\Sale\ISaleProcessor.cs" />
+    <Compile Include="Processors\SaleDetail\ISaleDetailProcessor.cs" />
+    <Compile Include="Processors\Role\IRoleProcessor.cs" />
+    <Compile Include="Processors\Purchase\IPurchaseProcessor.cs" />
+    <Compile Include="Processors\PurchaseDetail\IPurchaseDetailProcessor.cs" />
+    <Compile Include="Processors\Module\IModuleProcessor.cs" />
+    <Compile Include="Processors\Item\IItemProcessor.cs" />
+    <Compile Include="Processors\Item\ItemProcessor.cs" />
+    <Compile Include="Processors\Module\ModuleProcessor.cs" />
+    <Compile Include="Processors\PurchaseDetail\PurchaseDetailProcessor.cs" />
+    <Compile Include="Processors\Purchase\PurchaseProcessor.cs" />
+    <Compile Include="Processors\Role\RoleProcessor.cs" />
+    <Compile Include="Processors\SaleDetail\SaleDetailProcessor.cs" />
+    <Compile Include="Processors\Sale\SaleProcessor.cs" />
+    <Compile Include="Processors\Shop\ShopProcessor.cs" />
+    <Compile Include="Processors\Supplier\SupplierProcessor.cs" />
+    <Compile Include="Processors\TaxProcessor\TaxProcessor.cs" />
+    <Compile Include="Processors\UserLog\UserLogProcessor.cs" />
+    <Compile Include="Processors\User\UserProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

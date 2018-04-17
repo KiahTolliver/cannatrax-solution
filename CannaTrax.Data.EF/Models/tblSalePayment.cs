@@ -1,13 +1,12 @@
 namespace CannaTrax.Data.EF
 {
+    using CannaTrax.Data.EF.Interfaces;
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("tblSalePayment")]
-    public partial class tblSalePayment
+    public partial class tblSalePayment : IQueryableEntity
     {
         public int ID { get; set; }
 
