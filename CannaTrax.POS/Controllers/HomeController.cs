@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using CannaTrax.POS.ViewModelManagers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +10,20 @@ namespace CannaTrax.POS.Controllers
 {
     public class HomeController : Controller
     {
+        private IEmployeeManager _employeeManager;
+        public HomeController(EmployeeManager employeeManager)
+        {
+            _employeeManager = employeeManager;
+        }
+        public HomeController():this(new EmployeeManager())
+        {
+
+        }
+       
         public ActionResult Index()
         {
-            return View();
+            var vm = _employeeManager.GetEmployeeList();
+            return View(vm);
         }
 
         public ActionResult About()

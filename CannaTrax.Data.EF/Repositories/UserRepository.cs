@@ -14,7 +14,10 @@ namespace CannaTrax.Data.EF.Repositories
         {
             _repo = repo;
         }
+        public UserRepository():this(new EntityRepository<tblUser>())
+        {
 
+        }
         public tblUser Add(tblUser dbo)
         {
             throw new NotImplementedException();
@@ -27,7 +30,8 @@ namespace CannaTrax.Data.EF.Repositories
 
         public IEnumerable<tblUser> GetAll()
         {
-            throw new NotImplementedException();
+            var ret = _repo.Queryable().Where(x => x.IsDeleted == false).ToList();
+            return ret;
         }
 
         public tblUser GetById(int id)

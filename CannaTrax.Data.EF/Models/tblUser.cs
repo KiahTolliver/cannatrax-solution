@@ -64,8 +64,5 @@ namespace CannaTrax.Data.EF
 
         public DateTime? LastModifiedDate { get; set; }
 
-        public virtual tblRole tblRole { get; set; }
-
-        public virtual tblShop tblShop { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace CannaTrax.POS
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js",                    
+                      "~/Scripts/respond.js",
                       "~/Scripts/chartist.min.js",
                       "~/Scripts/arrive.min.js",
                       "~/Scripts/perfect-scrollbar.jquery.min.js",

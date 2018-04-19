@@ -7,15 +7,10 @@ namespace CannaTrax.Data.EF
     using System.ComponentModel.DataAnnotations.Schema;
 
     [Table("tblRole")]
-    public partial class tblRole:  IQueryableEntity, IAuditableEntity
+    public partial class tblRole : IQueryableEntity, IAuditableEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblRole()
-        {
-            tblUsers = new HashSet<tblUser>();
-            tblUserPermissions = new HashSet<tblUserPermission>();
-        }
-
+     
         public int ID { get; set; }
 
         [StringLength(50)]
@@ -34,11 +29,5 @@ namespace CannaTrax.Data.EF
         public int? LastModifiedBy { get; set; }
 
         public DateTime? LastModifiedDate { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblUser> tblUsers { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblUserPermission> tblUserPermissions { get; set; }
     }
 }

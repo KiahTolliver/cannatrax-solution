@@ -10,10 +10,7 @@ namespace CannaTrax.Data.EF
     public partial class tblShop : IQueryableEntity, IAuditableEntity
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tblShop()
-        {
-            tblUsers = new HashSet<tblUser>();
-        }
+      
 
         public int ID { get; set; }
 
@@ -47,7 +44,5 @@ namespace CannaTrax.Data.EF
 
         public DateTime? LastModifiedDate { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tblUser> tblUsers { get; set; }
     }
 }

@@ -34,7 +34,10 @@ namespace CannaTrax.Data.EF.Repositories
                 throw new ArgumentNullException(nameof(context));
             }
         }
+        public EntityRepository():this(new UtilityContext())
+        {
 
+        }
         public void Insert(T obj)
         {
             InsertMany(new List<T>() { obj });

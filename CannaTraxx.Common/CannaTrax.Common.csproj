@@ -112,6 +112,11 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CannaTrax.Data.EF\CannaTrax.Data.EF.csproj">
+      <Project>{D2B685C3-4404-4171-BA76-EB267DEB1241}</Project>
+      <Name>CannaTrax.Data.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
