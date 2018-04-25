@@ -1,9 +1,4 @@
-﻿
-using CannaTrax.POS.ViewModelManagers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using CannaTrax.POS.ViewModelManagers;
 using System.Web.Mvc;
 
 namespace CannaTrax.POS.Controllers
@@ -15,10 +10,7 @@ namespace CannaTrax.POS.Controllers
         {
             _employeeManager = employeeManager;
         }
-        public HomeController():this(new EmployeeManager())
-        {
-
-        }
+        public HomeController():this(new EmployeeManager()) { }
        
         public ActionResult Index()
         {

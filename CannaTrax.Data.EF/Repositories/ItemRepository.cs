@@ -14,6 +14,7 @@ namespace CannaTrax.Data.EF.Repositories
         {
             _repo = repo;
         }
+        public ItemRepository() : this(new EntityRepository<tblItem>()) { }
         public tblItem Add(tblItem dbo)
         {
             _repo.Insert(dbo);
